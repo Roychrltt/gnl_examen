@@ -21,7 +21,7 @@ static int	ft_append(char *s, char *buffer)
 static int	get_len(char *s)
 {
 	int i = 0;
-	if (!s)
+	if (!s || !*s)
 		return (-1);
 	while (s[i] && s[i] != '\n')
 	{
@@ -89,7 +89,7 @@ char	*get_next_line(int fd)
 	ft_memmove(content, len);
 	return (line);
 }
-
+/*
 int	main(void)
 {
 	int fd = open("test.txt", O_RDONLY);
@@ -97,9 +97,9 @@ int	main(void)
 	for (int i = 0; i < 10; i++)
 	{
 		char *s = get_next_line(fd);
-		printf("%s", s);
+		printf("%d: %s", i, s);
 		free(s);
 	}
 
 	return (0);
-}
+}*/
